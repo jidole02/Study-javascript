@@ -1,0 +1,18 @@
+body{
+    height: 300vh;
+}
+header{
+    width: 100%;
+    padding: 20px 0;
+    background-color: black;
+    text-align: center;
+    color: white;
+    position: fixed;
+}
+.new{
+    padding: 30px 0;
+    background-color: blue;
+}
+a{
+    text-decoration: none;
+}
