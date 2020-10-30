@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>image slideshow</title>
+        <style>
+            body {
+                width: 100%;
+                overflow: scroll;
+                margin: 0;
+            }
+            .slide {
+                width: 100vw;
+                display:block;
+                border-style: none;
+            }
+            .left {
+                position: absolute;
+                top: 50%;
+                left: 0%;
+            }
+            .right {
+                position: absolute;
+                top: 50%;
+                right: 0%;
+            }
+            .button {
+                border: none;
+                display: inline-block;
+                padding: 8px 16px;
+                vertical-align: middle;
+                overflow: hidden;
+                text-decoration: none;
+                text-align: center;
+                cursor: pointer;
+                white-space: nowrap;
+                color: #000;
+                background-color: #f1f1f1;
+                position: fixed;
+                position: absolute;
+            }
+            .button:hover {
+                color: #fff;
+                background-color: #444;
+            }
+            .container{
+                display: flex;
+                width: 600vw;
+                transition: 1s;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container" id="cont"> <!--이미지를 담는 곳-->
+            <img class="slide" src="./img/image1.jpg">
+            <img class="slide" src="./img/image2.jpg">
+            <img class="slide" src="./img/image3.jpg">
+            <img class="slide" src="./img/image4.jpg">
+            <img class="slide" src="./img/image5.jpg">
+            <img class="slide" src="./img/image6.jpg">
+        </div>
+        <input class="button left" type="button" value="&#10094;" id="buttonL"> <!--왼쪽버튼-->
+        <input class="button right" type="button" value="&#10095;" id="buttonR"> <!--오른쪽 버튼-->
+        <button id="auto">Auto</button>
+        
+        <script>
+            let cont = document.getElementById('cont'); // 콘테이너 변수 선언
+            let L = document.getElementById('buttonL'); // 왼쪽버튼 변수 선언
+            let R = document.getElementById('buttonR'); // 오른쪽 버튼 변수 선언
+            let i = 1; // translateX 조정을 위한 변수값
+
+            R.addEventListener('click',function(){
+                if(i==6){ // 만약 맨 마지막이면
+                    cont.style.transform = 'translateX(0vw)' // 맨 처음 사진으로 가게 함
+                    i = 1;
+                }
+                else{
+                    cont.style.transform = 'translateX(-' + i*100 + 'vw)' // 오른쪽으로 -i*100vw만큼 가게 함
+                i++;
+                }
+            })
+            L.addEventListener('click',function(){
+                if(i == 1){ // 만약 맨 처음이면
+                    cont.style.transform = 'translateX(-500vw)' // 맨 마지막으로 가게 함
+                    i = 5;
+                }
+                else{
+                    i--; // i값을 1 감소시키고
+                    cont.style.transform = 'translateX(-' + i*100 + 'vw)' // 왼쪽으로 가게 함
+                }
+            })
+
+        </script>
+    </body>
+</html>
