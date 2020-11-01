@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body">
+    <div class="cont"></div>
+    <script>
+            let body = document.getElementById('body')
+            window.onload = function () {
+                let value = prompt('숫자를 입력하세요.')
+                gugudan(value);
+            }
+            let cont = document.getElementById('cont')
+
+            let gugudan = function (val) {
+                let i = 1;
+                let arr = [];
+                document.write(val + '단을 출력합니다.' + '<br>')
+                for (i = 1; i < 10; i++) {
+                    arr[i] = val + '*' + i + '=' + val * i;
+                    document.write(arr[i] + '<br>');
+                }
+            }
+    </script>
+</body>
+</html>
