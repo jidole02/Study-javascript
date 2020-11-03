@@ -1,0 +1,107 @@
+body{
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+}
+a{
+    text-decoration: none;
+}
+
+header{
+    background-color: rgb(35, 37, 39);
+    padding: 8px 44px;
+    display: flex;
+    justify-content: space-between;
+}
+.fas{
+    color: rgb(233, 205, 79);
+    font-size: 1.5rem;
+}
+.headerLogo{
+    width: 8.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+.headerLogo > a{
+    color: white;
+    font-size: 1.5rem;
+    margin-left: 3px;
+}
+.headerMenu > ul{
+    list-style: none;
+    display: flex;
+    padding-left: 0;
+}
+ul > li{
+    color: white;
+    padding: 8px 24px;
+    cursor: pointer;
+}
+ul > li:hover{
+    background-color: rgb(51, 54, 59);
+    border-radius: 4px;
+}
+.headerIcon{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4%;
+    justify-content: space-between;
+    padding: 18px 0;
+}
+.headerIcon > i{
+    font-size: 2rem;
+}
+.headerIcon > i:hover{
+    color: grey;
+}
+.fa-bars{
+    color: rgb(219, 219, 219);
+    position: absolute;
+    right: 44px;
+    font-size: large;
+    visibility: hidden;
+
+}
+#headerContainer{
+    transition: 1s;
+    display: flex;
+}
+@media screen and (max-width : 768px){
+    header{
+        flex-direction: column;
+    }
+    .headerMenu > ul{
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+    ul > li{
+        width: 100%;
+        text-align: center;
+    }
+    .headerIcon{
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    .headerIcon > i{
+        font-size: large;
+        padding: 5px 5px;
+    }
+    .fa-bars{
+        visibility: visible;
+    }
+    #menu{
+        display: none;
+        width: 100%;
+    }
+    #icon{
+        display: none;
+        width: 100%;
+        text-align: center;
+    }
+}
