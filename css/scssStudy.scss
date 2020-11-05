@@ -1,0 +1,12 @@
+$red: #FF0000;
+$blue: #8181d6;
+
+$important: $blue;
+$alertColor: $red;
+
+.box {
+  color: $color-primary;
+  background: $color-danger;
+  width: 300px;
+  height: 300px;
+}
